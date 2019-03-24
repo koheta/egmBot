@@ -1,1 +1,1 @@
-
+worker: python egmBot.py
