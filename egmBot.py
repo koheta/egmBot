@@ -2568,9 +2568,7 @@ async def on_message(message):
             reply = f'{message.author.mention}さんのチームの点呼が完了しました。一回戦のチャットで待機してください'
             await client.send_message(message.channel, reply)
             name = message.author.name
-            print(name)
             miTenko.remove(name)
-            print(miTenko)
             for i in miTenko:
                 user = discord.utils.get(message.server.members, name = i)
                 await client.send_message(message.channel, user.mention +'さん！点呼が未完了です')
