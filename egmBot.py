@@ -446,66 +446,77 @@ async def on_message(message):
                 channel_name = i
                 await client.create_channel(message.server, channel_name, type=discord.ChannelType.text)
             await client.send_message(message.channel,  'シングルイリミネーション チームサイズ16のチャンネルを作成しました')
+            await client.send_message(message.channel, cmd)
     #シングル サイズ32
         if message.content.startswith('Single size 32'):
             for i in Single_size32:
                 channel_name = i
                 await client.create_channel(message.server, channel_name, type=discord.ChannelType.text)
             await client.send_message(message.channel,  'シングルイリミネーション チームサイズ32のチャンネルを作成しました')
+            await client.send_message(message.channel, cmd)
     #シングル サイズ64
         if message.content.startswith('Single size 64'):
             for i in Single_size64:
                 channel_name = i
                 await client.create_channel(message.server, channel_name, type=discord.ChannelType.text)
             await client.send_message(message.channel,  'シングルイリミネーション チームサイズ64のチャンネルを作成しました')
+            await client.send_message(message.channel, cmd)
     #シングル サイズ128
         if message.content.startswith('Single size 128'):
             for i in Single_size128:
                 channel_name = i
                 await client.create_channel(message.server, channel_name, type=discord.ChannelType.text)
             await client.send_message(message.channel,  'シングルイリミネーション チームサイズ128のチャンネルを作成しました')
+            await client.send_message(message.channel, cmd)
     #シングル サイズ256
         if message.content.startswith('Single size 256'):
             for i in Single_size256:
                 channel_name = i
                 await client.create_channel(message.server, channel_name, type=discord.ChannelType.text)
             await client.send_message(message.channel,  'シングルイリミネーション チームサイズ256のチャンネルを作成しました')
+            await client.send_message(message.channel, cmd)
     #ダブル サイズ8
         if message.content.startswith('Double size 8'):
             for i in Double_size8:
                 channel_name = i
                 await client.create_channel(message.server, channel_name, type=discord.ChannelType.text)
             await client.send_message(message.channel,  'ダブルイリミネーション チームサイズ8のチャンネルを作成しました')
+            await client.send_message(message.channel, cmd)
     #ダブル サイズ16
         if message.content.startswith('Double size 16'):
             for i in Double_size16:
                 channel_name = i
                 await client.create_channel(message.server, channel_name, type=discord.ChannelType.text)
             await client.send_message(message.channel,  'ダブルイリミネーション チームサイズ16のチャンネルを作成しました')
+            await client.send_message(message.channel, cmd)
     #ダブル サイズ32
         if message.content.startswith('Double size 32'):
             for i in Double_size32:
                 channel_name = i
                 await client.create_channel(message.server, channel_name, type=discord.ChannelType.text)
             await client.send_message(message.channel,  'ダブルイリミネーション チームサイズ32のチャンネルを作成しました')
+            await client.send_message(message.channel, cmd)
     #ダブル サイズ64
         if message.content.startswith('Double size 64'):
             for i in Double_size64:
                 channel_name = i
                 await client.create_channel(message.server, channel_name, type=discord.ChannelType.text)
             await client.send_message(message.channel,  'ダブルイリミネーション チームサイズ64のチャンネルを作成しました')
+            await client.send_message(message.channel, cmd)
     #ダブル サイズ128
         if message.content.startswith('Double size 128'):
             for i in Double_size128:
                 channel_name = i
                 await client.create_channel(message.server, channel_name, type=discord.ChannelType.text)
             await client.send_message(message.channel,  'ダブルイリミネーション チームサイズ128のチャンネルを作成しました')
+            await client.send_message(message.channel, cmd)
     #ダブル サイズ256
         if message.content.startswith('Double size 256'):
             for i in Double_size256:
                 channel_name = i
                 await client.create_channel(message.server, channel_name, type=discord.ChannelType.text)
             await client.send_message(message.channel,  'ダブルイリミネーション チームサイズ256のチャンネルを作成しました')
+            await client.send_message(message.channel, cmd)
 
     if message.content.startswith('!勝ちました') or message.content.startswith('!win') or message.content.startswith('!勝ち') or message.content.startswith('！勝ちました') or message.content.startswith('!WIN'):
         ch = [channel.id for channel in client.get_all_channels()]
@@ -2600,17 +2611,17 @@ Outrider: スパロー, ホーク
         await client.send_message(message.channel, reply)
     if message.content.startswith('!GA'):
         reply = '''
-        GA制限リスト 更新: 2019/3/25
+        GA制限リスト 更新: 2019/4/1
         
 GAを無理強するのは違反行為です。お気をつけください。
         
-武器: RAMPART, DMR, SWORDFISH, OUTLOW, SDM, HELLION, C-knife
-アタッチメント: ストック2
+武器: DMR, SWORDFISH, OUTLOW, SDM, HELLION
+アタッチメント: FMJ2, ストック2
 PERK:
 ワイルドカード: オーバーキル, アンダーキル
 ギア: アーマー, 装備チャージ
 装備: モロトフ, アックス
-スペシャリスト: アナイアレーター, センサーダート, グラップルガン(S&Dのみ)
+スペシャリスト: アナイアレイター, センサーダート, グラップルガン(S&Dのみ), アサルトパック
 スコアストリーク: ドローン部隊, スナイパーヘリ, スレッシャー, 戦闘ヘリ, ストライクチーム'''
 
         await client.send_message(message.channel, reply)
