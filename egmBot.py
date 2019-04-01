@@ -5,7 +5,6 @@ import os
 
 client = discord.Client()
 
-
 Single_size8 = ['1_1', '1_2', '1_3', '1_4', '2_1', '2_2', 'final']
 Single_size16 = ['1_1', '1_2', '1_3', '1_4', '1_5', '1_6', '1_7', '1_8',
                  '2_1', '2_2', '2_3', '2_4',
@@ -516,8 +515,7 @@ async def on_message(message):
             l.append(channel.name)
 
         if message.channel.name == '1_1':
-            msg = 'おめでとうございます。勝利チームは #2_1 のチャットで待機してください'
-            await client.send_message(message.channel, msg)
+            await client.send_message(message.channel, 'おめでとうございます。勝利チームは #2_1 のチャットで待機してください')
         if message.channel.name == 'winners_1_1':
             await client.send_message(message.channel, 'おめでとうございます。勝利チームは #winners_2_1 のチャットで待機してください')
             await client.send_message(message.channel, '敗北チームは #losers_1_1 のチャットで待機してください')
