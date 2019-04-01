@@ -514,11 +514,9 @@ async def on_message(message):
         for i in ch:
             channel = client.get_channel(i)
             l.append(channel.name)
-        print(l)
 
         if message.channel.name == '1_1':
-            text_channel = client.get_channel('2_1')
-            msg = f'{message.author.mention}さん、おめでとうございます。勝利チームは {text_channel.mention}で次の試合相手と進行を行ってください'
+            msg = 'おめでとうございます。勝利チームは #2_1 のチャットで待機してください'
             await client.send_message(message.channel, msg)
         if message.channel.name == 'winners_1_1':
             await client.send_message(message.channel, 'おめでとうございます。勝利チームは #winners_2_1 のチャットで待機してください')
