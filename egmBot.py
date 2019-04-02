@@ -2557,7 +2557,7 @@ async def on_message(message):
 
     if message.content.startswith('!点呼開始'):
         if message.channel.name == '点呼':
-            miTenko = ([member.display_name for member in client.get_all_members()])
+            miTenko = ([member.name for member in message.server.members])
             bot = client.user.name
             miTenko.remove(bot)
             await client.send_message(message.channel, '@everyone 点呼を開始しました。メンバーが揃っているチームの代表は、このテキストチャットに　!揃いました　をコピペして送信してください')
