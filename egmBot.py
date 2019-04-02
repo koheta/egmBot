@@ -518,7 +518,7 @@ async def on_message(message):
             await client.send_message(message.channel,  'ダブルイリミネーション チームサイズ256のチャンネルを作成しました')
             await client.send_message(message.channel, cmd)
 
-    if message.content.startswith('!勝ちました') or message.content.startswith('!win') or message.content.startswith('!勝ち') or message.content.startswith('！勝ちました') or message.content.startswith('!WIN'):
+    if message.content.startswith('!勝') or message.content.startswith('!win') or message.content.startswith('！勝') or message.content.startswith('！win') or message.content.startswith('!WIN'):
         ch = [channel.id for channel in client.get_all_channels()]
         l = []
         for i in ch:
@@ -2555,14 +2555,14 @@ async def on_message(message):
 #ここまで１回戦の誘導
     global miTenko
 
-    if message.content.startswith('!点呼開始'):
+    if message.content.startswith('!点呼'):
         if message.channel.name == '点呼':
             miTenko = ([member.name for member in message.server.members])
             bot = client.user.name
             miTenko.remove(bot)
             await client.send_message(message.channel, '@everyone 点呼を開始しました。メンバーが揃っているチームの代表は、このテキストチャットに　!揃いました　をコピペして送信してください')
 
-    if message.content.startswith('!揃いました'):
+    if message.content.startswith('!揃'):
         if message.channel.name == '点呼':
             reply = f'{message.author.mention}さんのチームの点呼が完了しました。一回戦のチャットで待機してください'
             await client.send_message(message.channel, reply)
