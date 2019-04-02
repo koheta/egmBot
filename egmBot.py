@@ -2560,7 +2560,6 @@ async def on_message(message):
             miTenko = ([member.display_name for member in client.get_all_members()])
             bot = client.user.name
             miTenko.remove(bot)
-            miTenko.remove('EGM_resultBot')
             await client.send_message(message.channel, '@everyone 点呼を開始しました。メンバーが揃っているチームの代表は、このテキストチャットに　!揃いました　をコピペして送信してください')
 
     if message.content.startswith('!揃いました'):
