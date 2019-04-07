@@ -2642,7 +2642,17 @@ PERK:
         BO5のマップを自動生成しました
         '''
         await client.send_message(message.channel, reply + '\n' + 'HP: ' + HP1 + '\n' + 'S&D: ' + SD1 + '\n' + 'CTR: ' + CTR + '\n' + 'HP: ' + HP2 + '\n' + 'S&D: ' + SD2 + '\n')
-
+    if message.content.startswith('!BO3') or message.content.startswith('!bo3'):
+        r1 = random.randint(0, len(HPMap)-1)
+        r2 = random.randint(0, len(SDMap)-1)
+        r3 = random.randint(0, len(CTRMap)-1)
+        HP1 = HPMap[r1]
+        SD1 = SDMap[r2]
+        CTR = CTRMap[r3]
+        reply = '''
+        BO3のマップを自動生成しました
+        '''
+        await client.send_message(message.channel, reply + '\n' + 'HP: ' + HP1 + '\n' + 'S&D: ' + SD1 + '\n' + 'CTR: ' + CTR + '\n')
     if message.content.startswith('おちんぽ'):
         r = random.uniform(0, 30)
         await client.send_message(message.channel, f'{message.author.mention}さんのおちんぽは' + str(r) + 'cmです')
