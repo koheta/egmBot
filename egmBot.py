@@ -2555,14 +2555,14 @@ async def on_message(message):
 #ここまで１回戦の誘導
     global miTenko
 
-    if message.content.startswith('!点呼'):
+    if message.content.startswith('!点呼') or message.content.startswith('！点呼'):
         if message.channel.name == '点呼':
             miTenko = ([member.name for member in message.server.members])
             bot = client.user.name
             miTenko.remove(bot)
             await client.send_message(message.channel, '@everyone 点呼を開始しました。メンバーが揃っているチームの代表は、このテキストチャットに　!揃いました　をコピペして送信してください')
 
-    if message.content.startswith('!揃'):
+    if message.content.startswith('!揃') or message.content.startswith('！揃'):
         if message.channel.name == '点呼':
             reply = f'{message.author.mention}さんのチームの点呼が完了しました。一回戦のチャットで待機してください'
             await client.send_message(message.channel, reply)
@@ -2572,7 +2572,7 @@ async def on_message(message):
                 user = discord.utils.get(message.server.members, name = i)
                 await client.send_message(message.channel, user.mention +'さん！点呼が未完了です')
 
-    if message.content.startswith('!eスポーツルール'):
+    if message.content.startswith('!e') or message.content.startswith('！e') or message.content.startswith('!イー') or message.content.startswith('！イー'):
         reply = '''
         クラス作成制限
 以下のアイテムはCWLルールにより使用が制限されています。
@@ -2606,7 +2606,7 @@ Outrider: スパロー, ホーク
 マップ: Arsenal, Frequency. Gridlock, Seaside'''
 
         await client.send_message(message.channel, reply)
-    if message.content.startswith('!GA'):
+    if message.content.startswith('!GA') or message.content.startswith('！GA'):
         reply = '''
         GA制限リスト 更新: 2019/4/1
         
@@ -2626,7 +2626,7 @@ PERK:
         reply = '準備中'
         await client.send_message(message.channel, reply)
 
-    if message.content.startswith('!BO5 MAP') or message.content.startswith('!bo5'):
+    if message.content.startswith('!BO5') or message.content.startswith('!bo5') or message.content.startswith('！BO5') or message.content.startswith('！bo5'):
 
         r1 = random.randint(0, len(HPMap)-1)
         r2 = random.randint(0, len(SDMap)-1)
@@ -2642,7 +2642,7 @@ PERK:
         BO5のマップを自動生成しました
         '''
         await client.send_message(message.channel, reply + '\n' + 'HP: ' + HP1 + '\n' + 'S&D: ' + SD1 + '\n' + 'CTR: ' + CTR + '\n' + 'HP: ' + HP2 + '\n' + 'S&D: ' + SD2 + '\n')
-    if message.content.startswith('!BO3') or message.content.startswith('!bo3'):
+    if message.content.startswith('!BO3') or message.content.startswith('!bo3') or message.content.startswith('！BO3') or message.content.startswith('！bo3'):
         r1 = random.randint(0, len(HPMap)-1)
         r2 = random.randint(0, len(SDMap)-1)
         r3 = random.randint(0, len(CTRMap)-1)
