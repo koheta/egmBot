@@ -519,7 +519,7 @@ async def on_message(message):
             await client.send_message(message.channel, cmd)
 
     if message.content.startswith('!勝') or message.content.startswith('!win') or message.content.startswith('！勝') or message.content.startswith('！win') or message.content.startswith('!WIN'):
-        ch = [channel.id for channel in client.get_all_channels()]
+        ch = [channel.id for channel in message.server.channels]
         l = []
         for i in ch:
             channel = client.get_channel(i)
