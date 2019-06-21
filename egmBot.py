@@ -2568,6 +2568,8 @@ async def on_message(message):
             await client.send_message(message.channel, reply)
             name = message.author.name
             miTenko.remove(name)
+            
+            await asyncio.sleep(60)
             for i in miTenko:
                 user = discord.utils.get(message.server.members, name = i)
                 await client.send_message(message.channel, user.mention +'さん！点呼が未完了です')
@@ -2627,21 +2629,26 @@ PERK:
         await client.send_message(message.channel, reply)
 
     if message.content.startswith('!BO5') or message.content.startswith('!bo5') or message.content.startswith('！BO5') or message.content.startswith('！bo5'):
-
         r1 = random.randint(0, len(HPMap)-1)
-        r2 = random.randint(0, len(SDMap)-1)
-        r3 = random.randint(0, len(CTRMap)-1)
-        r4 = random.randint(0, len(HPMap)-1)
-        r5 = random.randint(0, len(SDMap)-1)
         HP1 = HPMap[r1]
+        del HPMap[r1]
+        r2 = random.randint(0, len(SDMap)-1)
         SD1 = SDMap[r2]
+        del SDMap[r2]
+        r3 = random.randint(0, len(CTRMap)-1)
         CTR = CTRMap[r3]
+        r4 = random.randint(0, len(HPMap)-1)
         HP2 = HPMap[r4]
+        r5 = random.randint(0, len(SDMap)-1)
         SD2 = SDMap[r5]
+
         reply = '''
         BO5のマップを自動生成しました
         '''
         await client.send_message(message.channel, reply + '\n' + 'HP: ' + HP1 + '\n' + 'S&D: ' + SD1 + '\n' + 'CTR: ' + CTR + '\n' + 'HP: ' + HP2 + '\n' + 'S&D: ' + SD2 + '\n')
+        HPMap.append(HP1)
+        SDMap.append(SD1)
+        
     if message.content.startswith('!BO3') or message.content.startswith('!bo3') or message.content.startswith('！BO3') or message.content.startswith('！bo3'):
         r1 = random.randint(0, len(HPMap)-1)
         r2 = random.randint(0, len(SDMap)-1)
