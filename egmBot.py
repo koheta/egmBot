@@ -2664,7 +2664,7 @@ PERK:
         await client.send_message(message.channel, reply + '\n' + '1マップ目: ' + map1 + '\n' + '2マップ目: ' + map2 + '\n' + '3マップ目: ' + map3 + '\n')
         on2Map.append(map1)
         on2Map.append(map2)
-        on2Map.append(map3)
+        
       
     if message.content.startswith('!BO3') or message.content.startswith('!bo3') or message.content.startswith('！BO3') or message.content.startswith('！bo3'):
         r1 = random.randint(0, len(HPMap)-1)
