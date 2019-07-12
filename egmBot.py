@@ -365,7 +365,7 @@ CoD_CES_Rule =[]
 HPMap =['Arsenal', 'Frequency', 'Gridlock', 'Hacienda', 'Seaside']
 SDMap =['Arsenal', 'Frequency', 'Gridlock', 'Hacienda', 'Payload']
 CTRMap =['Arsenal', 'Frequency', 'Gridlock', 'Seaside']
-on2Map =['Firing Range','Gridlock','Seaside','Slums,Arsenal','Nuketown','Grind']
+on2Map =['Firing Range','Gridlock','Seaside','Slums','Arsenal','Nuketown','Grind']
 
 onoff = 0
 
