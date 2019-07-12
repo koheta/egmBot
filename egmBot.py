@@ -365,7 +365,7 @@ CoD_CES_Rule =[]
 HPMap =['Arsenal', 'Frequency', 'Gridlock', 'Hacienda', 'Seaside']
 SDMap =['Arsenal', 'Frequency', 'Gridlock', 'Hacienda', 'Payload']
 CTRMap =['Arsenal', 'Frequency', 'Gridlock', 'Seaside']
-
+on2Map =['Firing Range','Gridlock','Seaside','Slums,Arsenal','Nuketown','Grind']
 
 onoff = 0
 
@@ -2648,7 +2648,24 @@ PERK:
         await client.send_message(message.channel, reply + '\n' + 'HP: ' + HP1 + '\n' + 'S&D: ' + SD1 + '\n' + 'CTR: ' + CTR + '\n' + 'HP: ' + HP2 + '\n' + 'S&D: ' + SD2 + '\n')
         HPMap.append(HP1)
         SDMap.append(SD1)
+    if message.content.startswith('!on2') or message.content.startswith('!on2') or message.content.startswith('！on2') or message.content.startswith('！on2'):
+        t1 = random.randint(0, len(on2Map)-1)
+        map1 = on2Map[t1]
+        del on2Map[t1]
+        t2 = random.randint(0, len(on2Map)-1)
+        map2 = on2Map[t2]
+        del on2Map[t2]
+        t3 = random.randint(0, len(on2Map)-1)
+        map3 = on2Map[t3]
         
+        reply = '''
+        2on2のマップを自動生成しました
+        '''
+        await client.send_message(message.channel, reply + '\n' + '1マップ目: ' + map1 + '\n' + '2マップ目: ' + map2 + '\n' + '3マップ目: ' + map3 + '\n')
+        on2Map.append(map1)
+        on2Map.append(map2)
+        on2Map.append(map3)
+      
     if message.content.startswith('!BO3') or message.content.startswith('!bo3') or message.content.startswith('！BO3') or message.content.startswith('！bo3'):
         r1 = random.randint(0, len(HPMap)-1)
         r2 = random.randint(0, len(SDMap)-1)
